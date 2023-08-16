@@ -3,8 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Главная</title>
+
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <script src="https://mapgl.2gis.com/api/js/v1"></script>
 </head>
 <body>
+    <div class="header">
+        <p id="p_system" class="p35">ЭкоСистема</p>
+        <p id="p_main" class="p30">Главная</p>
+        <p id="p_events" class="p30">События</p>
+        <p id="p_statistics" class="p30">Статистика</p>
+        <p id="p_log_in" class="p30">Вход</p>
+        <p id="p_register" class="p30">Регистрация</p>
+        <p id="p_account" class="p30">Личный кабинет</p>
+    </div>
 
+    <div id="index_panel">
+        <div id="map_container"></div>
+
+        <div id="appeal">
+            <form>
+                <h1 class="h_header">Отправить обращение</h1>
+                <label>
+                    <textarea></textarea>
+                </label>
+                <p id="note">Не более 5 файлов. Общий размер не более 15 Мб. Форматы: png, jpeg</p>
+                <button class="green_btn" type="button">Прикрепить файлы</button>
+                <button class="green_btn" type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/js/index.js"></script>
 </body>
 </html>
