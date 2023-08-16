@@ -33,6 +33,10 @@ html, body {
     margin-right: 2%;
 }
 
+.p60 {
+    font-size: 3.2vw;
+}
+
 #p_system {
     margin-left: 1%;
 }
@@ -53,6 +57,10 @@ html, body {
     font-size: 3.2vw;
 }
 
+.h_centered {
+    text-align: center;
+}
+
 .green_btn {
     background-color: #5EC023;
     color: white;
@@ -61,6 +69,64 @@ html, body {
     border-radius: 3.4vw;
     border-style: solid;
     font-size: 1.8vw;
-    padding: 0.5%;
+    padding: 1% 5% 1% 5%;
     cursor: pointer;
+}
+
+.modal_btn {
+    padding: 5% 5% 5% 5%;
+}
+
+.green_btn:hover {
+    background-color: white;
+    color: black;
+}
+
+input {
+    background-color: white;
+    border-color: #5EC023;
+    border-radius: 2vw;
+    border-style: solid;
+    font-size: 1.8vw;
+    text-align: center;
+    padding: 5% 1% 5% 1%;
+}
+
+input::placeholder {
+    color: #D9D9D9;
+}
+
+.login {
+    display: none;
+    background-color: white;
+    border-color: #5EC023;
+    border-radius: 2vw;
+    border-style: solid;
+    font-size: 1.8vw;
+    position: fixed;
+    margin-left: 35%;
+    margin-top: 8%;
+    padding: 0 5% 3% 5%;
+    text-align: center;
+}
+
+.registration {
+    background-color: white;
+    border-color: #5EC023;
+    border-radius: 2vw;
+    border-style: solid;
+    font-size: 1.8vw;
+    position: fixed;
+    margin-left: 35%;
+    margin-top: 1%;
+    padding: 0 5% 3% 5%;
+    text-align: center;
+}
+
+#reg_first {
+    display: none;
+}
+
+#reg_second {
+    display: none;
 }
