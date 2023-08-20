@@ -12,7 +12,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat "mvn clean install -DskipTests"
+                withMaven(
+                    maven: 'jenkins-maven'
+                ) {
+                    sh "mvn clean install -DskipTests"
+                }
             }
         }
 
