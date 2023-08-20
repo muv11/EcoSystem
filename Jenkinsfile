@@ -7,6 +7,7 @@ pipeline {
 
     tools {
         jdk 'java-17'
+        maven 'jenkins-maven'
     }
 
     stages {
@@ -15,7 +16,7 @@ pipeline {
                 withMaven(
                     maven: 'jenkins-maven'
                 ) {
-                    sh "mvn clean install -DskipTests"
+                    bat "mvn clean install -DskipTests"
                 }
             }
         }
