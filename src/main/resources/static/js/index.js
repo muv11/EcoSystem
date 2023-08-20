@@ -72,5 +72,59 @@ function closeModalWindows() {
     closeSecondRegModalWindow();
 }
 
+function redirectOnMainPage() {
+    document.getElementById('p_main').addEventListener('click', function () {
+        window.location.href = 'http://localhost:8080/';
+    });
+}
+
+function redirectOnEventsPage() {
+    document.getElementById('p_events').addEventListener('click', function () {
+        window.location.href = 'http://localhost:8080/events';
+    });
+}
+
+function redirectOnStatisticsPage() {
+    document.getElementById('p_statistics').addEventListener('click', function () {
+        window.location.href = 'http://localhost:8080/statistics';
+    });
+}
+
+function redirectOnAccountPage() {
+    document.getElementById('p_account').addEventListener('click', function () {
+        window.location.href = 'http://localhost:8080/account';
+    });
+}
+
+function redirect() {
+    redirectOnMainPage();
+    redirectOnEventsPage();
+    redirectOnStatisticsPage();
+    redirectOnAccountPage();
+}
+
+async function getCurrentUserData() {
+    const response = await fetch('http://localhost:8080/api/current-user');
+    response.json().then((data) => {
+        console.log(data);
+        return data;
+    });
+}
+
+function isUserLoggedIn() {
+    const currentUser = getCurrentUserData();
+    if (currentUser[0] === null) {
+        document.getElementById('p_account').style.display = 'none';
+        document.getElementById('p_log_in').style.display = 'block';
+        document.getElementById('p_register').style.display = 'block';
+    } else {
+        document.getElementById('p_account').style.display = 'block';
+        document.getElementById('p_log_in').style.display = 'none';
+        document.getElementById('p_register').style.display = 'none';
+    }
+}
+
 openModalWindows();
 closeModalWindows();
+isUserLoggedIn();
+redirect();
