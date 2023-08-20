@@ -3,8 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Личный кабинет</title>
+
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/account.css">
 </head>
 <body>
+    <div class="header">
+        <p id="p_system" class="p35">ЭкоСистема</p>
+        <p id="p_main" class="p30">Главная</p>
+        <p id="p_events" class="p30">События</p>
+        <p id="p_statistics" class="p30">Статистика</p>
+        <p id="p_log_in" class="p30">Вход</p>
+        <p id="p_register" class="p30">Регистрация</p>
+        <p id="p_account" class="p30">Личный кабинет</p>
+    </div>
 
+    <div id="panel">
+        <div class="userData">
+            <p class="p60">Фамилия Имя Отчество</p>
+            <p class="p60">01.01.2000</p>
+            <p class="p60">8 800 555 35 35</p>
+            <p class="p60">Login</p>
+            <p class="p60">*********</p>
+            <button type="button" class="green_btn">Изменить</button>
+            <button type="button" class="green_btn">Добавить сотрудника</button>
+        </div>
+
+        <div class="list">
+            <h1 class="h_header h_centered">Список событий</h1>
+            <button type="button" class="green_btn">Добавить событие</button>
+
+            <img src="/static/img/arrow_left_green.png" alt="left">
+            <img src="/static/img/arrow_right_green.png" alt="right">
+        </div>
+    </div>
+
+    <script src="/static/js/index.js"></script>
 </body>
 </html>
