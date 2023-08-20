@@ -3,8 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <title>События</title>
+
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/events.css">
 </head>
 <body>
+    <div class="header">
+        <p id="p_system" class="p35">ЭкоСистема</p>
+        <p id="p_main" class="p30">Главная</p>
+        <p id="p_events" class="p30">События</p>
+        <p id="p_statistics" class="p30">Статистика</p>
+        <p id="p_log_in" class="p30">Вход</p>
+        <p id="p_register" class="p30">Регистрация</p>
+        <p id="p_account" class="p30">Личный кабинет</p>
+    </div>
 
+    <div id="panel">
+        <div class="picture">
+            <img src="/static/img/white.jpg" alt="Image">
+        </div>
+
+        <div class="description">
+            <h1 class="h_header h_centered">Название события</h1>
+            <p class="p35">Дата</p>
+            <p class="p35">Место</p>
+            <p class="p30">Описание</p>
+            <button type="button" class="green_btn">Записаться</button>
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay">
+        <div id="login" class="login">
+            <form method="post" action="/login">
+                <h1 class="h_header h_centered">Вход</h1>
+                <span id="false_login_try" class="msg">Неверный логин или пароль</span>
+                <label>
+                    <input name="login" placeholder="Логин" type="text">
+                    <span id="login_empty_field" class="msg">Поле не может быть пустым</span>
+                </label>
+                <br>
+                <br>
+                <label>
+                    <input name="password" placeholder="Пароль" type="password">
+                    <span id="password_empty_field" class="msg">Поле не может быть пустым</span>
+                </label>
+                <br>
+                <br>
+                <button class="green_btn modal_btn" type="submit">Подтвердить</button>
+            </form>
+        </div>
+
+        <form method="post" action="/register">
+            <div id="reg_first" class="registration">
+                <h1 class="h_header h_centered">Регистрация</h1>
+                <label>
+                    <input name="login" placeholder="Логин" type="text">
+                </label>
+                <span id="reg1_empty_field" class="msg">Поля не могут быть пустыми</span>
+                <br>
+                <br>
+                <label>
+                    <input name="password" placeholder="Пароль" type="password">
+                </label>
+                <br>
+                <br>
+                <label>
+                    <input name="email" placeholder="Email" type="text">
+                </label>
+                <br>
+                <br>
+                <label>
+                    <input name="phoneNumber" placeholder="Телефон" type="tel">
+                </label>
+                <br>
+                <br>
+                <button id="reg_first_btn" class="green_btn modal_btn" type="button">Продолжить</button>
+            </div>
+
+            <div id="reg_second" class="registration">
+                <h1 class="h_header h_centered">Регистрация</h1>
+                <span id="reg2_empty_field" class="msg">Поля не могут быть пустыми</span>
+                <label>
+                    <input name="name" placeholder="Имя" type="text">
+                </label>
+                <br>
+                <br>
+                <label>
+                    <input name="lastName" placeholder="Фамилия" type="text">
+                </label>
+                <br>
+                <br>
+                <label>
+                    <input name="fathersName" placeholder="Отчество" type="text">
+                </label>
+                <br>
+                <br>
+                <label>
+                    <input name="birthDate" placeholder="Дата рождения" type="date">
+                </label>
+                <br>
+                <br>
+                <button class="green_btn modal_btn" type="submit">Подтвердить</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/static/js/index.js"></script>
 </body>
 </html>
