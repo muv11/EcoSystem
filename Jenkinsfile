@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'maven:3.9.3-eclipse-temurin-17-alpine' } }
+    agent any
 
     environment {
         mavenHome = tool 'jenkins-maven'
@@ -13,11 +13,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                withMaven(
-                    maven: 'jenkins-maven'
-                ) {
-                    bat "mvn clean install -DskipTests"
-                }
+                sh "mvn clean install -DskipTests"
             }
         }
 
