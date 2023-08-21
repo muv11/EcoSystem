@@ -1,0 +1,21 @@
+#panel {
+    width: 100%;
+    height: 94%;
+    float: left;
+}
+
+.picture {
+    float: left;
+    text-align: center;
+    width: 50%;
+}
+
+.description {
+    float: right;
+    width: 50%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
