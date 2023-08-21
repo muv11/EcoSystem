@@ -1,0 +1,22 @@
+#panel {
+    width: 100%;
+    height: 94%;
+    float: left;
+}
+
+.userData {
+    float: left;
+    text-align: center;
+    width: 50%;
+}
+
+.list {
+    float: right;
+    width: 50%;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
