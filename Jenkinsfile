@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        mavenHome = tool 'jenkins-maven'
-    }
-
     tools {
         jdk 'java-17'
         maven 'jenkins-maven'
@@ -13,7 +9,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat "mvn clean install -DskipTests"
+                git 'https://github.com/muv11/EcoSystem'
+                sh "mvn clean install -DskipTests"
             }
         }
 
