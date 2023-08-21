@@ -42,17 +42,7 @@ html, body {
 }
 
 #p_main {
-    /*margin-left: 35%;*/
-    margin-left: 10%;
-}
-
-#p_account {
-    /*visibility: hidden;*/
-    display: none;
-}
-
-#p_log_in, #p_register {
-    display: block;
+    margin-left: 35%;
 }
 
 #p_main, #p_account, #p_events, #p_log_in, #p_register, #p_statistics {
