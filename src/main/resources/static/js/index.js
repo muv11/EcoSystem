@@ -105,20 +105,19 @@ function redirect() {
 
 async function getCurrentUserData() {
     const response = await fetch('http://localhost:8080/api/current-user');
-    response.json().then((data) => {
-        console.log(data);
+    return response.json().then((data) => {
         return data;
     });
 }
 
-function isUserLoggedIn() {
-    const currentUser = getCurrentUserData();
-    if (currentUser[0] === null) {
+async function isUserLoggedIn() {
+    const currentUser = await getCurrentUserData();
+    if (currentUser.login === null) {
         document.getElementById('p_account').style.display = 'none';
-        document.getElementById('p_log_in').style.display = 'block';
-        document.getElementById('p_register').style.display = 'block';
+        document.getElementById('p_log_in').style.display = 'inline';
+        document.getElementById('p_register').style.display = 'inline';
     } else {
-        document.getElementById('p_account').style.display = 'block';
+        document.getElementById('p_account').style.display = 'inline';
         document.getElementById('p_log_in').style.display = 'none';
         document.getElementById('p_register').style.display = 'none';
     }
@@ -126,5 +125,5 @@ function isUserLoggedIn() {
 
 openModalWindows();
 closeModalWindows();
-isUserLoggedIn();
+isUserLoggedIn().then();
 redirect();
