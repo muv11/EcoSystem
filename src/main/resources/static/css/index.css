@@ -1,0 +1,40 @@
+#panel {
+    width: 100%;
+    height: 94%;
+    float: left;
+}
+
+#map_container {
+    width: 48%;
+    height: 92%;
+    overflow: hidden;
+    float: left;
+    margin: 1%;
+}
+
+#appeal {
+    width: 48%;
+    height: 100%;
+    position: relative;
+    float: right;
+}
+
+#appeal_form {
+    height: 100%;
+}
+
+textarea {
+    border-color: #5EC023;
+    border-radius: 2vw;
+    border-style: solid;
+    font-size: 1.5vw;
+    color: black;
+    resize: none;
+    min-width: 85%;
+    height: 60%;
+}
+
+#note {
+    color: #424242;
+    font-size: 1vw;
+}

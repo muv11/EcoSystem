@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Marmelad&display=swap');
+
+* {
+    font-family: 'Marmelad', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #5EC023;
+    color: white;
+    width: 100%;
+    height: 3%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+
+.p30, .p35 {
+    display: inline;
+}
+
+.p35 {
+    font-size: 2.2vw;
+}
+
+.p30 {
+    font-size: 1.8vw;
+    margin-right: 2%;
+}
+
+.p60 {
+    font-size: 3.2vw;
+}
+
+#p_system {
+    margin-left: 1%;
+}
+
+#p_main {
+    margin-left: 35%;
+}
+
+#p_main, #p_account, #p_events, #p_log_in, #p_register, #p_statistics {
+    cursor: pointer;
+}
+
+.h_header {
+    font-size: 3.2vw;
+}
+
+.h_centered {
+    text-align: center;
+}
+
+.green_btn {
+    background-color: #5EC023;
+    color: white;
+    border-color: #5EC023;
+    text-align: center;
+    border-radius: 3.4vw;
+    border-style: solid;
+    font-size: 1.8vw;
+    padding: 1% 5% 1% 5%;
+    cursor: pointer;
+}
+
+.modal_btn {
+    padding: 5% 5% 5% 5%;
+}
+
+.green_btn:hover {
+    background-color: white;
+    color: black;
+}
+
+input {
+    background-color: white;
+    border-color: #5EC023;
+    border-radius: 2vw;
+    border-style: solid;
+    font-size: 1.8vw;
+    text-align: center;
+    padding: 5% 1% 5% 1%;
+}
+
+input::placeholder {
+    color: #D9D9D9;
+}
+
+.overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    pointer-events: none;
+}
+
+.login {
+    display: none;
+    background-color: white;
+    border-color: #5EC023;
+    border-radius: 2vw;
+    border-style: solid;
+    font-size: 1.8vw;
+    position: fixed;
+    margin-left: 35%;
+    margin-top: 8%;
+    padding: 0 5% 3% 5%;
+    text-align: center;
+    pointer-events: auto;
+}
+
+.registration {
+    background-color: white;
+    border-color: #5EC023;
+    border-radius: 2vw;
+    border-style: solid;
+    font-size: 1.8vw;
+    position: fixed;
+    margin-left: 35%;
+    margin-top: 1%;
+    padding: 0 5% 3% 5%;
+    text-align: center;
+    pointer-events: auto;
+}
+
+#reg_first, #reg_second {
+    display: none;
+}
+
+.msg {
+    display: none;
+    color: red;
+    font-size: 1vw;
+}
