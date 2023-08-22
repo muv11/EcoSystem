@@ -2,6 +2,7 @@ package com.muv.ecosystem.controller;
 
 import com.muv.ecosystem.service.LoginService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -15,11 +16,11 @@ public class LoginController {
     }
 
     @PostMapping(value = "/login")
-    public String login(LoginForm loginForm) {
-        boolean bool = loginService.isLoginDataCorrect(loginForm.login, loginForm.password);
-        if (bool) {
-            return "events";
+    public String login(LoginForm loginForm, Model model) {
+        if (loginService.isLoginDataCorrect(loginForm.login, loginForm.password)) {
+            return "index";
         }
+        model.addAttribute("falseTry", "Неверный логин или пароль");
         return "index";
     }
 
