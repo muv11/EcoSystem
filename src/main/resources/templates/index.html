@@ -39,20 +39,19 @@
         <div id="login" class="login">
             <form method="post" action="/login">
                 <h1 class="h_header h_centered">Вход</h1>
-                <span id="false_login_try" class="msg">Неверный логин или пароль</span>
                 <label>
-                    <input name="login" placeholder="Логин" type="text">
-                    <span id="login_empty_field" class="msg">Поле не может быть пустым</span>
+                    <input id="lgn_login_input" name="login" placeholder="Логин" type="text">
+                    <span id="lgn_login_empty_msg" class="msg">Поле не может быть пустым</span>
                 </label>
                 <br>
                 <br>
                 <label>
-                    <input name="password" placeholder="Пароль" type="password">
-                    <span id="password_empty_field" class="msg">Поле не может быть пустым</span>
+                    <input id="lgn_password_input" name="password" placeholder="Пароль" type="password">
+                    <span id="lgn_password_empty_msg" class="msg">Поле не может быть пустым</span>
                 </label>
                 <br>
                 <br>
-                <button class="green_btn modal_btn" type="submit">Подтвердить</button>
+                <button id="login_form_submit" class="green_btn modal_btn" type="submit">Подтвердить</button>
             </form>
         </div>
 
