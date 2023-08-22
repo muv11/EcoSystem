@@ -135,7 +135,19 @@ input::placeholder {
 }
 
 .msg {
-    display: none;
     color: red;
-    font-size: 1vw;
+    font-size: 1.3vw;
+}
+
+.alert {
+    padding: 0.5%;
+    margin-bottom: 0.5%;
+    border: 1px solid transparent;
+    text-align: center;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
 }
