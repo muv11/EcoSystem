@@ -18,7 +18,7 @@
         <p id="p_register" class="p30">Регистрация</p>
         <p id="p_account" class="p30">Личный кабинет</p>
     </div>
-
+    <div th:if="${falseTry}" class="alert alert-danger">Неверный логин или пароль</div>
     <div id="panel">
         <div id="map_container"></div>
 
