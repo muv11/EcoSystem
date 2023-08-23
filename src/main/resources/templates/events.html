@@ -6,6 +6,8 @@
 
     <link rel="stylesheet" href="/static/css/common.css">
     <link rel="stylesheet" href="/static/css/events.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
 </head>
 <body>
     <div class="header">
@@ -36,20 +38,19 @@
         <div id="login" class="login">
             <form method="post" action="/login">
                 <h1 class="h_header h_centered">Вход</h1>
-                <span id="false_login_try" class="msg">Неверный логин или пароль</span>
                 <label>
-                    <input name="login" placeholder="Логин" type="text">
-                    <span id="login_empty_field" class="msg">Поле не может быть пустым</span>
+                    <input id="lgn_login_input" name="login" placeholder="Логин" type="text">
+                    <span id="lgn_login_empty_msg" class="msg">Поле не может быть пустым</span>
                 </label>
-                <br>
+                <br id="br_login_1">
                 <br>
                 <label>
-                    <input name="password" placeholder="Пароль" type="password">
-                    <span id="password_empty_field" class="msg">Поле не может быть пустым</span>
+                    <input id="lgn_password_input" name="password" placeholder="Пароль" type="password">
+                    <span id="lgn_password_empty_msg" class="msg">Поле не может быть пустым</span>
                 </label>
+                <br id="br_login_2">
                 <br>
-                <br>
-                <button class="green_btn modal_btn" type="submit">Подтвердить</button>
+                <button id="login_form_submit" class="green_btn modal_btn" type="submit">Подтвердить</button>
             </form>
         </div>
 
@@ -57,57 +58,67 @@
             <div id="reg_first" class="registration">
                 <h1 class="h_header h_centered">Регистрация</h1>
                 <label>
-                    <input name="login" placeholder="Логин" type="text">
+                    <input id="rgs_login_input" name="login" placeholder="Логин" type="text">
+                    <span id="rgs_login_empty_msg" class="msg">Поле не может быть пустым</span>
                 </label>
-                <span id="reg1_empty_field" class="msg">Поля не могут быть пустыми</span>
-                <br>
+                <br id="br_reg_1">
                 <br>
                 <label>
-                    <input name="password" placeholder="Пароль" type="password">
+                    <input id="rgs_password_input" name="password" placeholder="Пароль" type="password">
+                    <span id="rgs_password_empty_msg" class="msg">Поле не может быть пустым</span>
+                    <span id="rgs_password_incorrect_msg" class="msg">Пароль должен содержать <br> минимум 8 символов и иметь хотя бы <br> одну заглавную букву</span>
                 </label>
-                <br>
+                <br id="br_reg_2">
                 <br>
                 <label>
-                    <input name="email" placeholder="Email" type="text">
+                    <input id="rgs_email_input" name="email" placeholder="Email" type="email">
+                    <span id="rgs_email_empty_msg" class="msg">Поле не может быть пустым</span>
+                    <span id="rgs_email_incorrect_msg" class="msg">Недопустимый формат email</span>
                 </label>
-                <br>
+                <br id="br_reg_3">
                 <br>
                 <label>
-                    <input name="phoneNumber" placeholder="Телефон" type="tel">
+                    <input id="rgs_phone_input" name="phoneNumber" placeholder="Телефон" type="text">
+                    <span id="rgs_phone_empty_msg" class="msg">Поле не может быть пустым</span>
+                    <span id="rgs_phone_incorrect_msg" class="msg">Недопустимый номер телефона</span>
                 </label>
-                <br>
+                <br id="br_reg_4">
                 <br>
                 <button id="reg_first_btn" class="green_btn modal_btn" type="button">Продолжить</button>
             </div>
 
             <div id="reg_second" class="registration">
                 <h1 class="h_header h_centered">Регистрация</h1>
-                <span id="reg2_empty_field" class="msg">Поля не могут быть пустыми</span>
                 <label>
-                    <input name="name" placeholder="Имя" type="text">
+                    <input id="rgs_name_input" name="name" placeholder="Имя" type="text">
+                    <span id="rgs_name_empty_msg" class="msg">Поле не может быть пустым</span>
                 </label>
-                <br>
-                <br>
-                <label>
-                    <input name="lastName" placeholder="Фамилия" type="text">
-                </label>
-                <br>
+                <br id="br_reg_5">
                 <br>
                 <label>
-                    <input name="fathersName" placeholder="Отчество" type="text">
+                    <input id="rgs_last_name_input" name="lastName" placeholder="Фамилия" type="text">
+                    <span id="rgs_last_name_empty_msg" class="msg">Поле не может быть пустым</span>
                 </label>
-                <br>
+                <br id="br_reg_6">
                 <br>
                 <label>
-                    <input name="birthDate" placeholder="Дата рождения" type="date">
+                    <input id="rgs_fathers_name_input" name="fathersName" placeholder="Отчество" type="text">
+                    <span id="rgs_fathers_name_empty_msg" class="msg">Поле не может быть пустым</span>
                 </label>
+                <br id="br_reg_7">
                 <br>
+                <label>
+                    <input id="rgs_birth_date_input" name="birthDate" placeholder="Дата рождения" type="date">
+                    <span id="rgs_birth_date_empty_msg" class="msg">Поле не может быть пустым</span>
+                </label>
+                <br id="br_reg_8">
                 <br>
-                <button class="green_btn modal_btn" type="submit">Подтвердить</button>
+                <button id="reg_second_btn" class="green_btn modal_btn" type="submit">Подтвердить</button>
             </div>
         </form>
     </div>
 
     <script src="/static/js/index.js"></script>
+    <script src="/static/js/form.js"></script>
 </body>
 </html>
