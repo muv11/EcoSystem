@@ -7,3 +7,20 @@ const map = new mapgl.Map('map_container', {
     zoom: 10,
     zoomControl: false
 });
+
+let markerOnClick = new mapgl.Marker(map, {
+    coordinates: centerCoordinates
+});
+markerOnClick.hide();
+function createMarkerOnMapClick() {
+    map.on('click', function (event) {
+        markerOnClick.destroy();
+        let coords = [event.lngLat[0], event.lngLat[1]];
+        markerOnClick = new mapgl.Marker(map, {
+            coordinates: coords
+        });
+        markerOnClick.show();
+    });
+}
+
+createMarkerOnMapClick();
