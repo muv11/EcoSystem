@@ -23,4 +23,24 @@ function createMarkerOnMapClick() {
     });
 }
 
+let appeals = [];
+async function requestAppeals() {
+    const response = await fetch("http://localhost:8080/api/appeals");
+    appeals = await response.json();
+}
+let marker;
+async function showMarkers() {
+    await requestAppeals();
+    console.log(appeals);
+    for (let i = 0; i < appeals.length; i++) {
+        let coords = [appeals[i].longitude, appeals[i].latitude];
+        console.log(coords);
+        marker = new mapgl.Marker(map, {
+            coordinates: coords
+        });
+    }
+}
+
+
 createMarkerOnMapClick();
+showMarkers().then();
