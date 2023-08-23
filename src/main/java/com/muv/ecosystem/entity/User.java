@@ -27,7 +27,7 @@ public class User {
     @Column(name = "email", length = 40)
     private String email;
     @Basic
-    @Column(name = "phone_number", length = 12)
+    @Column(name = "phone_number", length = 18)
     private String phoneNumber;
     @Basic
     @Column(name = "name", length = 30)
