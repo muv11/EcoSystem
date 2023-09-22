@@ -25,15 +25,14 @@
         <div id="map_container"></div>
 
         <div id="appeal">
-            <form id="appeal_form">
-                <h1 class="h_header">Отправить обращение</h1>
-                <label>
-                    <textarea></textarea>
-                </label>
-                <p id="note">Не более 5 файлов. Общий размер не более 15 Мб. Форматы: png, jpeg</p>
-                <button class="green_btn" type="button">Прикрепить файлы</button>
-                <button class="green_btn" type="submit">Отправить</button>
-            </form>
+            <h1 class="h_header">Отправить обращение</h1>
+            <span id="appeal_empty" class="msg">Поле не может быть пустым</span>
+            <label>
+                <textarea id="appeal_textarea"></textarea>
+            </label>
+            <p id="note">Не более 5 файлов. Общий размер не более 15 Мб. Форматы: png, jpeg</p>
+            <button class="green_btn" type="button">Прикрепить файлы</button>
+            <button id="appeal_btn" class="green_btn" type="submit">Отправить</button>
         </div>
     </div>
 
@@ -124,5 +123,6 @@
     <script src="/static/js/index.js"></script>
     <script src="/static/js/map.js"></script>
     <script src="/static/js/form.js"></script>
+    <script src="/static/js/appeal.js"></script>
 </body>
 </html>
