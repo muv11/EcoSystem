@@ -1,5 +1,5 @@
 async function getCurrentUserData() {
-    const response = await fetch('http://localhost:8080/api/current-user');
+    const response = await fetch('http://localhost:8080/api/user/current');
     return response.json().then((data) => {
         return data;
     });
