@@ -16,9 +16,11 @@ import java.util.Map;
 public class CurrentUserDataRestController {
 
     private final UserManagementService userManagementService;
+    private final UserRepository userRepository;
 
     public CurrentUserDataRestController(UserManagementService userManagementService, UserRepository userRepository) {
         this.userManagementService = userManagementService;
+        this.userRepository = userRepository;
     }
 
     @GetMapping("/current")
@@ -32,6 +34,17 @@ public class CurrentUserDataRestController {
             currentUserData.put("role", userManagementService.getRole().getName());
         }
         return currentUserData;
+    }
+
+    @GetMapping("/personal-data")
+    public Map<String, String> getPersonalDataByLogin(@RequestParam String login) {
+        Map<String, String> personalData = new HashMap<>();
+        var user = userRepository.findByLogin(login);
+        personalData.put("fullName", user.getLastName() + " " + user.getName() + " " + user.getFathersName());
+        personalData.put("birthDate", user.getBirthDate().toString());
+        personalData.put("phoneNumber", user.getPhoneNumber());
+        personalData.put("email", user.getEmail());
+        return personalData;
     }
 
 }
