@@ -12,15 +12,20 @@ let markerOnClick = new mapgl.Marker(map, {
     coordinates: centerCoordinates
 });
 markerOnClick.hide();
+let coords;
 function createMarkerOnMapClick() {
     map.on('click', function (event) {
         markerOnClick.destroy();
-        let coords = [event.lngLat[0], event.lngLat[1]];
+        coords = [event.lngLat[0], event.lngLat[1]];
         markerOnClick = new mapgl.Marker(map, {
             coordinates: coords
         });
         markerOnClick.show();
     });
+}
+
+function getAppealMarkerCoordinates() {
+    return coords;
 }
 
 let appeals = [];
@@ -31,10 +36,8 @@ async function requestAppeals() {
 let marker;
 async function showMarkers() {
     await requestAppeals();
-    console.log(appeals);
     for (let i = 0; i < appeals.length; i++) {
         let coords = [appeals[i].longitude, appeals[i].latitude];
-        console.log(coords);
         marker = new mapgl.Marker(map, {
             coordinates: coords
         });
