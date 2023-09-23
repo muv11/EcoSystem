@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title>Главная</title>
 
+    <link rel="icon" href="/static/img/favicon.png">
     <link rel="stylesheet" href="/static/css/common.css">
     <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/file_attachment.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
     <script src="https://mapgl.2gis.com/api/js/v1"></script>
@@ -31,7 +34,7 @@
                 <textarea id="appeal_textarea"></textarea>
             </label>
             <p id="note">Не более 5 файлов. Общий размер не более 15 Мб. Форматы: png, jpeg</p>
-            <button class="green_btn" type="button">Прикрепить файлы</button>
+            <button id="attach_btn" class="green_btn" type="button">Прикрепить файлы</button>
             <button id="appeal_btn" class="green_btn" type="submit">Отправить</button>
         </div>
     </div>
@@ -118,11 +121,42 @@
                 <button id="reg_second_btn" class="green_btn modal_btn" type="submit">Подтвердить</button>
         </div>
         </form>
+
+        <div id="file_attach" class="big_modal_window">
+            <div id="attach_common">
+                <div id="first_at_block">
+                    <div id="at_1_file" class="at_file_1">
+                        <img class="file" src="/static/img/file_icon.png" alt="file">
+                        <p id="at_1_file_name">File name</p>
+                    </div>
+                    <div id="at_2_file" class="at_file_1">
+                        <img class="file" src="/static/img/file_icon.png" alt="file">
+                        <p id="at_2_file_name">File name</p>
+                    </div>
+                    <div id="at_3_file" class="at_file_1">
+                        <img class="file" src="/static/img/file_icon.png" alt="file">
+                        <p id="at_3_file_name">File name</p>
+                    </div>
+                </div>
+                <div id="second_at_block">
+                    <div id="at_4_file" class="at_file_2">
+                        <img class="file" src="/static/img/file_icon.png" alt="file">
+                        <p id="at_4_file_name">File name</p>
+                    </div>
+                    <div id="at_5_file" class="at_file_2">
+                        <img class="file" src="/static/img/file_icon.png" alt="file">
+                        <p id="at_5_file_name">File name</p>
+                    </div>
+                </div>
+            </div>
+            <button id="attach_send_btn" class="green_btn" type="submit">Прикрепить</button>
+        </div>
     </div>
 
     <script src="/static/js/index.js"></script>
     <script src="/static/js/map.js"></script>
     <script src="/static/js/form.js"></script>
     <script src="/static/js/appeal.js"></script>
+    <script src="/static/js/file_attachment.js"></script>
 </body>
 </html>
