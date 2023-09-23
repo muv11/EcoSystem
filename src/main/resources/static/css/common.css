@@ -151,3 +151,17 @@ input::placeholder {
     background-color: #f8d7da;
     border-color: #f5c6cb;
 }
+
+.big_modal_window {
+    background-color: white;
+    border-color: #5EC023;
+    border-radius: 2vw;
+    border-style: solid;
+    font-size: 1.8vw;
+    position: fixed;
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 90%;
+    height: 85%;
+    pointer-events: auto;
+}
