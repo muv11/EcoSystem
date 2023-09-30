@@ -13,6 +13,7 @@ async function sendRequestParams() {
         appealForm.append('description', document.getElementById('appeal_textarea').value);
         appealForm.append('longitude', getAppealMarkerCoordinates()[0]);
         appealForm.append('latitude', getAppealMarkerCoordinates()[1]);
+        appealForm.append('userFiles', JSON.stringify(getUserFiles()));
         console.log(JSON.stringify(appealForm));
         let request = new XMLHttpRequest();
         const url = 'http://localhost:8080/appeal?dateTimeMs=' + Date.now() + '&login=' + currentUser.login;
