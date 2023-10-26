@@ -3,7 +3,7 @@ package com.muv.ecosystem.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.sql.Timestamp;
+import java.time.Instant;
 
 @Getter
 @Setter
@@ -25,7 +25,7 @@ public class Appeal {
     private Double latitude;
     @Basic
     @Column(name = "date_time")
-    private Timestamp dateTime;
+    private Instant dateTime;
     @Basic
     @Column(name = "description", length = 500)
     private String description;
@@ -42,4 +42,9 @@ public class Appeal {
     @JoinColumn(name = "topic_type", referencedColumnName = "id")
     private TopicType topicType;
 
+    public Appeal(Double longitude, Double latitude, String description) {
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.description = description;
+    }
 }

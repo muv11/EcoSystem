@@ -244,5 +244,47 @@ function validateRegistrationFormInput() {
     validateBirthDateInRegistrationForm();
 }
 
+async function getCurrentUserData() {
+    const response = await fetch('http://localhost:8080/api/user/current');
+    return response.json().then((data) => {
+        return data;
+    });
+}
+
+async function isUserLoggedIn() {
+    const currentUser = await getCurrentUserData();
+    if (currentUser.login === null) {
+        document.getElementById('appeal_btn').disabled = true;
+    } else {
+        document.getElementById('appeal_btn').disabled = false;
+    }
+}
+
+async function validateAppealInput() {
+    const currentUser = await getCurrentUserData();
+    const appealInput = document.getElementById('appeal_textarea');
+    const emptyMsg = document.getElementById('appeal_empty');
+    const button = document.getElementById('appeal_btn');
+
+    button.disabled = true;
+    emptyMsg.style.display = 'none';
+
+    appealInput.addEventListener('input', function () {
+        if (currentUser.login === null) {
+            document.getElementById('appeal_btn').disabled = true;
+        } else {
+            if (appealInput.value === null || appealInput.value === '') {
+                emptyMsg.style.display = 'block';
+                button.disabled = true;
+            } else {
+                emptyMsg.style.display = 'none';
+                button.disabled = false;
+            }
+        }
+
+    });
+}
+
 validateLoginFormInput();
 validateRegistrationFormInput();
+validateAppealInput().then();
